@@ -1,12 +1,14 @@
 import StoryImage, { StoryImageProps } from "./StoryImage";
+import StoryLive, { StoryLiveProps } from "./StoryLive";
 import StoryName, { StoryNameProps } from "./StoryName";
 
-export type StoryProps = StoryImageProps & StoryNameProps;
+export type StoryProps = StoryImageProps & StoryNameProps & StoryLiveProps;
 
-const Story = ({ name, src }: StoryProps) => {
+const Story = ({ name, src, isLive = false }: StoryProps) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center relative">
       <StoryImage src={src} />
+      <StoryLive isLive={isLive} />
       <StoryName name={name} />
     </div>
   );
