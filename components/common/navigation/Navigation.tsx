@@ -1,8 +1,8 @@
 import { CiCircleMinus, CiSquarePlus } from "react-icons/ci";
 import { IoMdHeartEmpty, IoMdHome, IoMdSearch } from "react-icons/io";
-import { Link } from "react-router-dom";
 import { colors } from "../../../styles/color";
 import { sizes } from "../../../styles/sizes";
+import LinkIcon from "../Icon/LinkIcon";
 
 const Navigation = () => {
   return (
@@ -16,19 +16,11 @@ const Navigation = () => {
         }}
         className="w-full max-w-md flex justify-around items-center"
       >
-        <Link to={"/"}>
-          <IoMdHome />
-        </Link>
-        <Link to={"/search"}>
-          <IoMdSearch />
-        </Link>
-        <CiSquarePlus />
-        <Link to={"/like"}>
-          <IoMdHeartEmpty />
-        </Link>
-        <Link to={"/mypage"}>
-          <CiCircleMinus />
-        </Link>
+        <LinkIcon pageUrl="/" iconTag={<IoMdHome />} />
+        <LinkIcon pageUrl="/search" iconTag={<IoMdSearch />} />
+        <LinkIcon pageUrl="/plus" iconTag={<CiSquarePlus />} />
+        <LinkIcon pageUrl="/like" iconTag={<IoMdHeartEmpty />} />
+        <LinkIcon pageUrl="/mypage" iconTag={<CiCircleMinus />} />
       </div>
     </footer>
   );

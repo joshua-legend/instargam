@@ -1,6 +1,8 @@
 import { FaCamera, FaTelegramPlane } from "react-icons/fa";
 import { PiTelevisionSimpleDuotone } from "react-icons/pi";
 import { colors } from "../../styles/color";
+import Icon from "../common/Icon/Icon";
+import Image from "../common/image/Image";
 
 const TopBar = () => {
   return (
@@ -12,17 +14,11 @@ const TopBar = () => {
       }}
       className="w-full max-w-md flex justify-between items-center"
     >
-      <FaCamera />
-      <div style={{ width: "105px", height: "28px" }}>
-        <img
-          className="w-full h-full object-contain"
-          src="instargram_logo.png"
-          alt=""
-        />
-      </div>
+      <Icon icon={<FaCamera />} />
+      <Image src={"instargram_logo.png"} />
       <div className="flex gap-1">
-        <PiTelevisionSimpleDuotone />
-        <FaTelegramPlane />
+        <Icon icon={<PiTelevisionSimpleDuotone />} />
+        <Icon icon={<FaTelegramPlane />} />
       </div>
     </div>
   );
