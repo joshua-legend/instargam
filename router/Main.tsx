@@ -1,13 +1,8 @@
-import Icon from "../components/common/Icon/Icon";
-import FeedProfileImage from "../components/main/Feed/FeedTop/FeedProfileImage";
 import Story, { StoryProps } from "../components/main/Story/Story";
 import StoryBoard from "../components/main/Story/StoryBoard";
-import { LuBadgeCheck } from "react-icons/lu";
-import { BsThreeDots } from "react-icons/bs";
-import FeedProfileName from "../components/main/Feed/FeedTop/FeedProfileName";
-import FeedProfilePlace from "../components/main/Feed/FeedTop/FeedProfilePlace";
-import FeedTop from "../components/main/Feed/FeedTop/FeedTop";
+
 import Feed from "../components/main/Feed/Feed";
+import FeedSwiperImages from "../components/main/Feed/FeedSwiperImages/FeedSwiperImages";
 
 const Main = () => {
   const bts: StoryProps[] = [
@@ -28,8 +23,6 @@ const Main = () => {
   return (
     <div>
       <StoryBoard data={bts} />
-      <Feed />
-      <Feed />
       <Feed />
     </div>
   );

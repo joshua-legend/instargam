@@ -1,6 +1,7 @@
 import FeedContents from "./FeedContents/FeedContents";
 import FeedImages from "./FeedImages/FeedImages";
 import FeedInteraction from "./FeedInteraction/FeedInteraction";
+import FeedSwiperImages from "./FeedSwiperImages/FeedSwiperImages";
 import FeedTop from "./FeedTop/FeedTop";
 
 const Feed = () => {
@@ -13,7 +14,9 @@ const Feed = () => {
         nation="Japan"
         city="Osaka"
       />
-      <FeedImages />
+      <FeedSwiperImages
+        slides={[{ src: "jhope.webp" }, { src: "jm.webp" }, { src: "v.webp" }]}
+      />
       <FeedInteraction />
       <FeedContents />
     </>
