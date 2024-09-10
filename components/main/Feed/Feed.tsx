@@ -1,24 +1,27 @@
-import FeedContents from "./FeedContents/FeedContents";
-import FeedImages from "./FeedImages/FeedImages";
+import FeedContents, { FeedContentsProps } from "./FeedContents/FeedContents";
 import FeedInteraction from "./FeedInteraction/FeedInteraction";
-import FeedSwiperImages from "./FeedSwiperImages/FeedSwiperImages";
-import FeedTop from "./FeedTop/FeedTop";
+import FeedSwiperImages, {
+  FeedSwiperImagesProps,
+} from "./FeedSwiperImages/FeedSwiperImages";
+import FeedTop, { FeedTopProps } from "./FeedTop/FeedTop";
 
-const Feed = () => {
+export type FeedProps = {
+  FeedTopProps: FeedTopProps;
+  FeedSwiperImagesProps: FeedSwiperImagesProps;
+  FeedContentsProps: FeedContentsProps;
+};
+
+const Feed = ({
+  FeedTopProps,
+  FeedSwiperImagesProps,
+  FeedContentsProps,
+}: FeedProps) => {
   return (
     <>
-      <FeedTop
-        src={"jm.webp"}
-        name="지민"
-        isCeleb={true}
-        nation="Japan"
-        city="Osaka"
-      />
-      <FeedSwiperImages
-        slides={[{ src: "jhope.webp" }, { src: "jm.webp" }, { src: "v.webp" }]}
-      />
+      <FeedTop {...FeedTopProps} />
+      <FeedSwiperImages {...FeedSwiperImagesProps} />
       <FeedInteraction />
-      <FeedContents />
+      <FeedContents {...FeedContentsProps} />
     </>
   );
 };

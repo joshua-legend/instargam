@@ -3,11 +3,13 @@ import { iconSize, Size } from "../../../styles/sizes";
 type IconProps = {
   icon: React.ReactNode;
   size?: Size;
+  onClick?: () => void;
 };
 
-const Icon = ({ icon, size = "md" }: IconProps) => {
+const Icon = ({ icon, size = "md", onClick }: IconProps) => {
   return (
     <div
+      onClick={onClick}
       className="flex items-center justify-center"
       style={{
         ...iconSize[size],

@@ -4,7 +4,7 @@ import FeedProfileImage, { FeedProfileImageProps } from "./FeedProfileImage";
 import FeedProfileName, { FeedProfileNameProps } from "./FeedProfileName";
 import FeedProfilePlace, { FeedProfilePlaceProps } from "./FeedProfilePlace";
 
-type FeedTopProps = FeedProfileImageProps &
+export type FeedTopProps = FeedProfileImageProps &
   FeedProfileNameProps &
   FeedProfilePlaceProps;
 
