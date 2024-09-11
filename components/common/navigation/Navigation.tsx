@@ -6,15 +6,16 @@ import LinkIcon from "../Icon/LinkIcon";
 
 const Navigation = () => {
   return (
-    <footer className="w-screen fixed bottom-0 flex justify-center items-center">
+    <footer className="w-screen fixed bottom-0 z-10 flex justify-center items-center">
       <div
         style={{
           backgroundColor: colors.background.lightGrey,
           padding: sizes.padding.sm,
           height: sizes.height.lg,
           borderTop: colors.border.line,
+          maxWidth: "460px",
         }}
-        className="w-full max-w-md flex justify-around items-center"
+        className="w-full flex justify-around items-center"
       >
         <LinkIcon pageUrl="/" iconTag={<IoMdHome />} />
         <LinkIcon pageUrl="/search" iconTag={<IoMdSearch />} />
