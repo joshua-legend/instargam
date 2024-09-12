@@ -1,10 +1,14 @@
+import { Category } from "../../../router/Search";
+
 export type SearchCategoryButtonProps = {
   icon?: React.ReactNode;
-  category?: string;
+  category: Category;
+  onClick?: () => void;
 };
 const SearchCategoryButton = ({
   icon,
   category,
+  onClick,
 }: SearchCategoryButtonProps) => {
   return (
     <div
@@ -18,6 +22,7 @@ const SearchCategoryButton = ({
         alignItems: "center",
         gap: "5px",
       }}
+      onClick={onClick}
     >
       <span>{icon}</span>
       <span>{category}</span>

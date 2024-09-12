@@ -1,24 +1,17 @@
-import SearchCategoryButton, {
-  SearchCategoryButtonProps,
-} from "./SearchCategoryButton";
-import { BiSolidTv } from "react-icons/bi";
-import { FaShoppingCart } from "react-icons/fa";
+import SearchCategoryButton from "./SearchCategoryButton";
+import { categoryButtons } from "../../../constants/category";
+import { Category } from "../../../router/Search";
 
-const SearchCategory = () => {
-  const arr: SearchCategoryButtonProps[] = [
-    { category: "IGTV", icon: <BiSolidTv /> },
-    { category: "Shop", icon: <FaShoppingCart /> },
-    { category: "Style" },
-    { category: "Sports" },
-    { category: "Auto" },
-    { category: "Fashion" },
-    { category: "Food" },
-    { category: "News" },
-  ];
+type SearchCategoryProps = {
+  onClick: (e: Category) => void;
+};
 
+const SearchCategory = ({ onClick }: SearchCategoryProps) => {
   return (
     <div className="flex items-center gap-2 overflow-x-scroll">
-      {[arr.map((v) => <SearchCategoryButton {...v} />)]}
+      {categoryButtons.map((v) => (
+        <SearchCategoryButton {...v} onClick={() => onClick(v.category)} />
+      ))}
     </div>
   );
 };
